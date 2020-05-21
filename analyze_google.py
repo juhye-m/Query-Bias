@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 
 # This is needed because Google protects the source code of their html, giving a 403: forbidden.
 # In order to bypass this protection, the below makes Google think a human is accessing this data, not a computer
-# Adapted from http://edmundmartin.com/scraping-google-with-python/
+    # This step adapted from http://edmundmartin.com/scraping-google-with-python/
 
 USER_AGENT = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
 
@@ -73,8 +73,7 @@ def parse_results(html, option):
 
     return found_results, filename
 
-# Adapted from https://cloud.google.com/natural-language/docs/sentiment-tutorial#analyzing_document_sentiment
-
+#Analyze sentiment with Google Cloud Language API
 def analyze(text):
     """Run a sentiment analysis request on text within a passed filename."""
     client = language.LanguageServiceClient()
@@ -118,8 +117,7 @@ if __name__ == '__main__':
         count.append(number)
         number += 1
 
-    # create plot
-    # adapted from matplotlib.org examples
+    # Create plot with MatPlotLib
     fig, ax = plt.subplots()
     index = np.arange(n_groups)
     bar_width = 0.35
